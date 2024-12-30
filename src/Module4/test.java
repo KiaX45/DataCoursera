@@ -2,9 +2,18 @@ package Module4;
 
 public class test {
     public static void main(String[] args) {
+    testRandomQueue();
+    }
 
-    testDeque();
 
+    private static void testRandomQueue(){
+        RandomQueue<Integer> randomQueue = new RandomQueue<>();
+        randomQueue.enqueue(1);
+        randomQueue.enqueue(2);
+        randomQueue.enqueue(3);
+        randomQueue.enqueue(4);
+        randomQueue.dequeue();
+        randomQueue.printQueue();
     }
 
     private static void testDeque(){
