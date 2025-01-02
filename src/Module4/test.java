@@ -2,7 +2,24 @@ package Module4;
 
 public class test {
     public static void main(String[] args) {
-    testRandomQueue();
+        testMinStack();
+    }
+
+    public static void testMinStack(){
+        MinStack minStack = new MinStack();
+        minStack.push(512);
+        minStack.push(-1024);
+        minStack.push(-1024);
+        minStack.push(512);
+        System.out.println("---------------------");
+
+        minStack.pop();
+        minStack.pop();
+        minStack.pop();
+        minStack.pop();
+
+
+
     }
 
 
