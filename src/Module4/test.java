@@ -2,8 +2,21 @@ package Module4;
 
 public class test {
     public static void main(String[] args) {
-        testMinStack();
+        testUnix();
     }
+
+
+    public static void testUnix(){
+        Unix unix = new Unix();
+        System.out.println(unix.simplifyPath("/home/user/Documents/../Pictures"));
+    }
+
+
+    public static  void testPolishNotation(){
+        PolishNotation polishNotation = new PolishNotation();
+        System.out.println(polishNotation.evalRPN(new String[]{"2","1","+","3","*"}));
+    }
+
 
     public static void testMinStack(){
         MinStack minStack = new MinStack();
@@ -12,14 +25,10 @@ public class test {
         minStack.push(-1024);
         minStack.push(512);
         System.out.println("---------------------");
-
         minStack.pop();
         minStack.pop();
         minStack.pop();
         minStack.pop();
-
-
-
     }
 
 

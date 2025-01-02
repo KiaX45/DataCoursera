@@ -14,14 +14,15 @@ public class PolishNotation {
             }catch (Exception e){
                 //si no se pudo convertir a intero significa que es una operación
                 //tomamos los dos ultimos numeroes de la pila
-                int result = operate(elemento, stack[index], stack[index--]);
+                System.out.println(stack[index - 1]);
+                System.out.println(stack[index - 2]);
+                int result = operate(elemento, stack[index - 1], stack[index - 2]);
                 index --;
                 stack[index] = result;
-
             }
             index ++;
         }
-        return stack[index];
+        return stack[index-1];
 
     }
 
