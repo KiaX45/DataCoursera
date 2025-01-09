@@ -2,7 +2,13 @@ package Module5;
 
 public class Test {
     public static void main(String[] args) {
-        testPermutation();
+       testFlag();
+    }
+
+    public static void testFlag() {
+        Flag<Integer> flag = new Flag<>(new Integer[] {1,2,1,2,2,0});
+        flag.sort();
+        flag.print();
     }
 
     public static void testPermutation() {

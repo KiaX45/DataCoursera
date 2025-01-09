@@ -1,7 +1,5 @@
 package Module5;
 
-import com.sun.jdi.IntegerType;
-
 public class Flag<Type extends Comparable<Type>> {
     //attributes
     Type[] values = null;
@@ -14,13 +12,11 @@ public class Flag<Type extends Comparable<Type>> {
     public Flag(Type[] values) {
         this.values = values;
         red = 0;
-        white = this.values.length / 2;
+        white = 0;
         blue = this.values.length - 1;
     }
 
     public void sort(){
-
-
         //recorremos el arreglo normalmente
         for (int i = 0; i < this.values.length; i++) {
             //por cada uno lo vamos a identificar y lo ponemos el index correspondiente
@@ -35,7 +31,11 @@ public class Flag<Type extends Comparable<Type>> {
         }
     }
 
-    public void print() {}
+    public void print() {
+        for (Type value : this.values) {
+            System.out.print(value + " ");
+        }
+    }
 
     private int color (Type value, int index) {
         // 0 = Rojo
@@ -52,15 +52,23 @@ public class Flag<Type extends Comparable<Type>> {
                     yield this.red;
                 }
                 case 1 -> {
-                    if (this.values[this.white].equals(1) && this.white != index) {
+                    if ( this.white != index) {
                         this.white++;
                     }
                     yield this.white;
 
                 }
                 case 2 -> {
-                    if (this.values[this.blue].equals(2) && this.blue != index) {
+                    if(index > this.blue){
+                        yield index;
+                    }
+
+                    if (this.values[this.blue].equals(2) && !this.blue.equals(index) && this.blue > this.white) {
+                        System.out.println(index);
+                        System.out.println(this.blue);
                         this.blue--;
+                        print();
+                        System.out.println();
                     }
                     yield this.blue;
                 }
