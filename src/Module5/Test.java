@@ -2,7 +2,24 @@ package Module5;
 
 public class Test {
     public static void main(String[] args) {
-        testInsertionSort();
+        testPermutation();
+    }
+
+    public static void testPermutation() {
+        Permutation<Integer> permutation = new Permutation<>(new Integer[] {1,1,2,3,4}, new Integer[] {1,2,5});
+        System.out.println(permutation.comprobate());
+    }
+
+    public static void testIntersection(){
+        Intersection<Integer> intersection = new Intersection<>(new Integer[] {5,4,3,1,7}, new Integer[] {5,2,3,7,8,9,4});
+        intersection.intercept();
+
+    }
+
+    public static void testShuffle(){
+        Shuffle<Integer> shuffle = new Shuffle<>(new Integer[]{1,2,3,4,5,6,7,8,9,10});
+        shuffle.shuffle();
+        shuffle.print();
     }
 
     public static void testInsertionSort() {
