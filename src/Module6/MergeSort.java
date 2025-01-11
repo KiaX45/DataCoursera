@@ -63,6 +63,15 @@ public class MergeSort<Type extends Comparable<Type>> {
         return finalValues;
     }
 
+    private Type[] merge2(Type[] values1, Type[] values2) {
+        Type[] finalValues = Arrays.copyOf(values1, values1.length);
+        int indexValues1 = 0;
+        int indexValues2 = 0;
+
+        //lo diferente en este caso es que tenemos que hacer dos for ya que vamoa utilizar
+        return finalValues;
+    }
+
     public boolean comprobate(Type[] values) {
         //System.out.println(Arrays.toString(values));
         for (int i = 1; i < values.length; i++) {
