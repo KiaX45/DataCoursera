@@ -63,14 +63,60 @@ public class MergeSort<Type extends Comparable<Type>> {
         return finalValues;
     }
 
-    private Type[] merge2(Type[] values1, Type[] values2) {
+    public Type[] merge2(Type[] values1, Type[] values2) {
         Type[] finalValues = Arrays.copyOf(values1, values1.length);
         int indexValues1 = 0;
         int indexValues2 = 0;
 
-        //lo diferente en este caso es que tenemos que hacer dos for ya que vamoa utilizar
+        //lo diferente en este caso es que tenemos que hacer dos for ya que vamos reutilizar uno de los arreglos
+        for (int i = 0; i < finalValues.length; i++) {
+            if(indexValues2 >= values2.length){
+                finalValues[i] = values1[indexValues1];
+                indexValues1++;
+                continue;
+            }
+
+            if(indexValues1 >= values1.length){
+                finalValues[i] = values2[indexValues2];
+                indexValues2++;
+                continue;
+            }
+
+            if(values1[indexValues1].compareTo(values2[indexValues2]) <= 0 ){
+                finalValues[i] = values1[indexValues1];
+                indexValues1++;
+            }else{
+                finalValues[i] = values2[indexValues2];
+                indexValues2 ++;
+            }
+
+        }
+
+        for (int i = 0; i < values1.length; i++) {
+
+            if(indexValues1 >= values1.length){
+                values1[i] = values2[indexValues2];
+                indexValues2++;
+                continue;
+            }
+
+            if(indexValues2 >= values2.length || values1[indexValues1].compareTo(values2[indexValues2]) <= 0 ){
+                indexValues1++;
+            }else{
+                values1[i] = values2[indexValues2];
+                indexValues2++;
+            }
+
+
+        }
+
+        System.out.println(Arrays.toString(finalValues));
+        System.out.println(Arrays.toString(values1));
+
         return finalValues;
     }
+
+
 
     public boolean comprobate(Type[] values) {
         //System.out.println(Arrays.toString(values));
