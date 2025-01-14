@@ -5,8 +5,14 @@ import java.util.Arrays;
 public class Test {
     public static void main(String[] args) {
 
+        testRandomLinkedList();
 
+    }
 
+    public static void testRandomLinkedList(){
+        RandomLinkedList<Integer> randomLinkedList = new RandomLinkedList<>(new Integer[]{1,2,3,4,5});
+        randomLinkedList.print(randomLinkedList.showRandomValues());
+        randomLinkedList.sort();
     }
 
     public static void testMergeSort(){
